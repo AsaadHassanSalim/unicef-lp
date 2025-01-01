@@ -39,10 +39,10 @@ plugins {
 }
 
 tasks.register("buildRelease") {
-    val webAppProject = projects.narcoreWeb
+    val webAppProject = projects.lpWeb
 
     val outputJarName = project.name
-    val serverProjectName = projects.narcoreServer.name
+    val serverProjectName = projects.lpServer.name
     val webProjectName = webAppProject.name
     dependsOn(":$serverProjectName:jar")
     dependsOn(":$webProjectName:assemble")
@@ -59,7 +59,7 @@ tasks.register("buildRelease") {
             webReleaseDir,
             overwrite = true
         )
-        File("${projects.narcoreServer.dependencyProject.layout.buildDirectory.asFile.get()}/libs/$serverProjectName-$version.jar").copyTo(
+        File("${projects.lpServer.dependencyProject.layout.buildDirectory.asFile.get()}/libs/$serverProjectName-$version.jar").copyTo(
             File("${releaseDir.path}/$outputJarName.jar"),
             overwrite = true
         )

@@ -1,4 +1,4 @@
-rootProject.name = "narcore"
+rootProject.name = "lp"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -24,7 +24,7 @@ dependencyResolutionManagement {
     }
 }
 
-include(":narcore-server")
-include(":narcore-web")
+include(":lp-server")
+include(":lp-web")
 include(":dto-web")
 
